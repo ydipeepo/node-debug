@@ -11,22 +11,22 @@ export default class NullLoggerFactory implements LoggerFactory {
 
 	private readonly configuration: NullLoggerConfiguration = new NullLoggerConfiguration();
 
-    /** @inheritdoc */
+	/** @inheritdoc */
 	get severity() {
 		return this.configuration.severity;
 	}
 
-    /** @inheritdoc */
+	/** @inheritdoc */
 	set severity(value: Severity) {
 		this.configuration.severity = value;
 	}
 
-    /** @inheritdoc */
+	/** @inheritdoc */
 	create(name: string): Logger {
 		return new NullLogger(name, this.configuration);
 	}
 
-    /** @inheritdoc */
+	/** @inheritdoc */
 	suppress(..._names: string[]) {
 		this.configuration.suppress();
 	}
