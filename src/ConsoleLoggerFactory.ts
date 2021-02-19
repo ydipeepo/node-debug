@@ -1,5 +1,6 @@
 import ConsoleLogger from "./ConsoleLogger";
 import ConsoleLoggerConfiguration from "./ConsoleLoggerConfiguration";
+import Logger from "./Logger";
 import LoggerFactory from "./LoggerFactory";
 import Severity from "./Severity";
 
@@ -15,7 +16,7 @@ export default class ConsoleLoggerFactory implements LoggerFactory {
 		this.configuration.severity = value;
 	}
 
-	create(name: string) {
+	create(name: string): Logger {
 		return new ConsoleLogger(name, this.configuration);
 	}
 
